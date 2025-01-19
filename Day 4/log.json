@@ -68,5 +68,35 @@
     "message": "new request has been received",
     "path": "/favicon.ico",
     "timestamp": 1737185790495
+  },
+  {
+    "message": "new request has been received",
+    "path": "/",
+    "timestamp": 1737190220629
+  },
+  {
+    "message": "new request has been received",
+    "path": "/favicon.ico",
+    "timestamp": 1737190220730
+  },
+  {
+    "message": "new request has been received",
+    "path": "/",
+    "timestamp": 1737190221233
+  },
+  {
+    "message": "new request has been received",
+    "path": "/favicon.ico",
+    "timestamp": 1737190221330
+  },
+  {
+    "message": "new request has been received",
+    "path": "/",
+    "timestamp": 1737190221655
+  },
+  {
+    "message": "new request has been received",
+    "path": "/favicon.ico",
+    "timestamp": 1737190221746
   }
 ]
