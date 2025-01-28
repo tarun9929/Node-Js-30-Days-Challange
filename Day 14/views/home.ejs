@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home Page</title>
+        <style>
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f8f9fa;
+                color: #343a40;
+            }
+
+            h1 {
+                text-align: center;
+                margin-top: 20px;
+                color: #dc3545;
+                font-size: 2rem;
+            }
+
+            table {
+                width: 80%;
+                margin: 20px auto;
+                border-collapse: collapse;
+                background-color: #ffffff;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            .todohead,
+            .todo-items {
+                padding: 15px;
+                text-align: left;
+                border-bottom: 1px solid #dee2e6;
+            }
+
+            .todohead {
+                background-color: #343a40;
+                color: #ffffff;
+                text-transform: uppercase;
+                font-size: 0.9rem;
+                letter-spacing: 0.05rem;
+            }
+
+            .todoContainer:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            .todoContainer:hover {
+                background-color: #f8d7da;
+            }
+
+            .btn {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+                font-weight: bold;
+                color: #fff;
+                background-color: #dc3545;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s, transform 0.2s ease-in-out;
+            }
+
+            .btn:hover {
+                background-color: #c82333;
+                transform: scale(1.05);
+            }
+
+            .empty {
+                text-align: center;
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: #6c757d;
+                padding: 20px;
+                background-color: #f8f9fa;
+                border: none;
+                box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+                border-radius: 5px;
+                margin: 10px 0;
+                text-transform: uppercase;
+            }
+
+            .completed {
+                text-decoration: line-through;
+                color: #6c757d;
+            }
+
+            @media (max-width: 768px) {
+                table {
+                    width: 95%;
+                }
+
+                .todoContainer,
+                .todo-items {
+                    font-size: 0.85rem;
+                    padding: 10px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Todo List</h1>
+        <table>
+            <thead>
+                <tr class="todohead">
+                    <th class="todo-items">#</th>
+                    <th class="todo-items">Title</th>
+                    <th class="todo-items">Priority</th>
+                    <th class="todo-items">Due Date</th>
+                    <th class="todo-items">Goal Type</th>
+                    <th class="todo-items">Completed</th>
+                    <th class="todo-items">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (todos.length > 0) { %> <% todos.forEach((todo, index) =>
+                { %>
+                <tr class="todoContainer">
+                    <td class="todo-items"><%= index + 1 %></td>
+                    <td class="todo-items"><%= todo.title %></td>
+                    <td class="todo-items"><%= todo.priority %></td>
+                    <td class="todo-items"><%= todo.dueDate %></td>
+                    <td class="todo-items"><%= todo.goalType %></td>
+                    <td class="todo-itmes">
+                        <input type="checkbox" onchange="toggleTodoState" />
+                    </td>
+                    <td><button class="btn">Delete</button></td>
+                </tr>
+                <% }); %> <% } else { %>
+                <tr class="todoContainer">
+                    <td colspan="7" class="empty">
+                        No todos yet! Add a task to get started.
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        <script>
+            function toggleTodoState() {}
+        </script>
+    </body>
+</html>

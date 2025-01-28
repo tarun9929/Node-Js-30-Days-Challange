@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Todo List</title>
+        <style>
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f8f9fa;
+                color: #343a40;
+            }
+
+            h1 {
+                text-align: center;
+                margin-top: 20px;
+                color: #dc3545;
+                font-size: 2rem;
+            }
+
+            .form-container {
+                width: 80%;
+                margin: 20px auto;
+                background: #ffffff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            .form-group label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group button {
+                width: 100%;
+                padding: 10px;
+                font-size: 1rem;
+                border: 1px solid #ced4da;
+                border-radius: 5px;
+            }
+
+            .form-group input:focus,
+            .form-group select:focus {
+                outline: none;
+                border-color: #80bdff;
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+            }
+
+            .btn-submit {
+                font-size: 1rem;
+                font-weight: bold;
+                color: #fff;
+                background-color: #28a745;
+                border: none;
+                cursor: pointer;
+                transition: transform 0.2s ease-in-out, background-color 0.3s;
+            }
+
+            .btn-submit:hover {
+                background-color: #218838;
+                transform: scale(1.05);
+            }
+
+            @media (max-width: 768px) {
+                .form-container {
+                    width: 95%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Todo List</h1>
+        <div class="form-container">
+            <form action="/api/todos" method="post" accept="text/html">
+                <div class="form-group">
+                    <label for="title">Task Title</label>
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        placeholder="Enter task title"
+                        required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select id="priority" name="priority" required>
+                        <option value="">Select priority</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dueDate">Due Date</label>
+                    <input type="date" id="dueDate" name="dueDate" required />
+                </div>
+                <div class="form-group">
+                    <label for="goalType">Goal Type</label>
+                    <select id="goalType" name="goalType" required>
+                        <option value="">Select goal type</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="Health">Health</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn-submit">Add Task</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
